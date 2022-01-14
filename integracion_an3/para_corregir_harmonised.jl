@@ -16,7 +16,7 @@ begin
 end
 
 # ╔═╡ c8269fba-f3d3-4f72-b54b-6dd1260333c2
-df[!,"prueba"] = map(df."Info para Reporte") do statement
+df[!,"Info para Reporte"] = map(df."Info para Reporte") do statement
 	get(traducciones, statement,statement)
 end
 	
@@ -26,7 +26,12 @@ end
 di=Dict(1=>2,2=>3,3=>4)
 
 # ╔═╡ d8075b69-d82f-4c42-8d11-dbe23548e346
-XLSX.writetable("df.xlsx", collect(DataFrames.eachcol(df)), DataFrames.names(df))
+XLSX.writetable("BPC_proc.xlsx", collect(DataFrames.eachcol(df)), DataFrames.names(df))
+
+# ╔═╡ 5631d1da-8127-40c3-8f20-2283c0867465
+begin
+	a_dict = Dict( k=> k^2 for k in 1:10  )
+end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -404,5 +409,6 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═c8269fba-f3d3-4f72-b54b-6dd1260333c2
 # ╠═539642bf-412c-4cfc-af05-582d6bec2b22
 # ╠═d8075b69-d82f-4c42-8d11-dbe23548e346
+# ╠═5631d1da-8127-40c3-8f20-2283c0867465
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

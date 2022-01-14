@@ -9,9 +9,6 @@ pruebas=[]
 for n,node in enumerate(borders):
   df_slice=df2.iloc[borders[n-1]+1:node,:]
   df_slice[1:]['Names']=['' for i in range(df_slice[1:]['Name'].shape[0])]
-  pruebas.append(df_slice)
-  # if not df_slice.empty:
-    # print(df_slice.iloc[0,:]['Unnamed: 0'])
   for n, row in df.iterrows():
     if row.name.lower() in ' '.join(df_slice["Unnamed: 0"].dropna().str.lower()):
       sel=df_slice.iloc[-1,:].copy()
@@ -23,4 +20,3 @@ for n,node in enumerate(borders):
   reconstitutor_for_dataframe.append(df_slice)
 
 
-  
